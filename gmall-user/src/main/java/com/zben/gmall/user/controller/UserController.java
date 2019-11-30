@@ -1,9 +1,8 @@
 package com.zben.gmall.user.controller;
 
-import com.zben.gmall.user.bean.UmsMember;
-import com.zben.gmall.user.bean.UmsMemberReceiveAddress;
-import com.zben.gmall.user.mapper.UserMapper;
-import com.zben.gmall.user.service.UserService;
+import com.zben.gmall.bean.UmsMember;
+import com.zben.gmall.bean.UmsMemberReceiveAddress;
+import com.zben.gmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

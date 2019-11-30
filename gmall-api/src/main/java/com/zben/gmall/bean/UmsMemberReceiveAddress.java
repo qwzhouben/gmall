@@ -1,4 +1,4 @@
-package com.zben.gmall.user.bean;
+package com.zben.gmall.bean;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.zben.gmall.user.service;
+package com.zben.gmall.service;
 
-import com.zben.gmall.user.bean.UmsMember;
-import com.zben.gmall.user.bean.UmsMemberReceiveAddress;
+import com.zben.gmall.bean.UmsMember;
+import com.zben.gmall.bean.UmsMemberReceiveAddress;
 
 import java.util.List;
 

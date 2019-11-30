@@ -1,6 +1,6 @@
 package com.zben.gmall.user.mapper;
 
-import com.zben.gmall.user.bean.UmsMember;
+import com.zben.gmall.bean.UmsMember;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

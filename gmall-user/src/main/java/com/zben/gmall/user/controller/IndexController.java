@@ -1,6 +1,6 @@
 package com.zben.gmall.user.controller;
 
-import com.zben.gmall.user.service.UserService;
+import com.zben.gmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
