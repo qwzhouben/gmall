@@ -1,5 +1,6 @@
 package com.zben.gmall.user.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.zben.gmall.bean.UmsMember;
 import com.zben.gmall.bean.UmsMemberReceiveAddress;
 import com.zben.gmall.service.UserService;
@@ -18,7 +19,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @Autowired
+    @Reference
     UserService userService;
 
     /**

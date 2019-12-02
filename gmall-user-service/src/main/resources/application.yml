@@ -1,6 +1,7 @@
 
+
 server:
-  port: 8080
+  port: 8070
 
 #jdbc
 spring:
@@ -9,6 +10,15 @@ spring:
     password: 123456
     url: jdbc:mysql://localhost:3306/gmall?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
+  dubbo:
+    application:
+      name: user-service #服务名，不能跟别的dubbo提供端重复
+    registry:
+      protocol: zookeeper #指定注册中心协议
+      address: 94.191.2.120:2181  #注册中心的地址加端口号
+    base-package: com.zben.gmall  #注解方式要扫描的包
+    protocol:
+      name: dubbo
 
 #mybatis
 #开启驼峰
