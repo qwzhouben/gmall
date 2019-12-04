@@ -3,6 +3,7 @@ package com.zben.gmall.manage.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.zben.gmall.bean.PmsBaseAttrInfo;
 import com.zben.gmall.bean.PmsBaseAttrValue;
+import com.zben.gmall.bean.PmsBaseSaleAttr;
 import com.zben.gmall.manage.mapper.AttrInfoMapper;
 import com.zben.gmall.service.AttrInfoService;
 import org.apache.commons.lang3.StringUtils;
@@ -33,6 +34,11 @@ public class AttrInfoServiceImpl implements AttrInfoService {
     }
 
     @Override
+    public List<PmsBaseSaleAttr> baseSaleAttrList() {
+        return attrInfoMapper.selectAllBaseSaleAttr();
+    }
+
+    @Override
     @Transactional
     public void saveAttrInfo(PmsBaseAttrInfo pmsBaseAttrInfo) {
         //save
@@ -47,7 +53,7 @@ public class AttrInfoServiceImpl implements AttrInfoService {
         }
     }
 
-    private void saveAttrValue(PmsBaseAttrInfo pmsBaseAttrInfo) {
+    public void saveAttrValue(PmsBaseAttrInfo pmsBaseAttrInfo) {
         List<PmsBaseAttrValue> attrValueList = pmsBaseAttrInfo.getAttrValueList();
         attrValueList.forEach(attrValue -> {
             attrValue.setAttrId(pmsBaseAttrInfo.getId());

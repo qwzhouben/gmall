@@ -3,6 +3,7 @@ package com.zben.gmall.manage.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.zben.gmall.bean.PmsBaseAttrInfo;
 import com.zben.gmall.bean.PmsBaseAttrValue;
+import com.zben.gmall.bean.PmsBaseSaleAttr;
 import com.zben.gmall.service.AttrInfoService;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,5 +35,13 @@ public class AttrController {
     @GetMapping("/attrInfoList")
     public List<PmsBaseAttrInfo> attrInfoList(@RequestParam String catalog3Id) {
         return attrInfoService.attrInfoList(catalog3Id);
+    }
+
+    /**
+     * 基础销售属性列表
+     */
+    @PostMapping("baseSaleAttrList")
+    public List<PmsBaseSaleAttr> baseSaleAttrList() {
+        return attrInfoService.baseSaleAttrList();
     }
 }

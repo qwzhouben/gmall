@@ -14,7 +14,7 @@ import java.util.List;
 public interface AttrInfoMapper {
 
     @Select("select * from pms_base_attr_info where catalog3_id=#{catalog3Id}")
-   List<PmsBaseAttrInfo> selectAttrInfoByCatalog3Id(@Param("catalog3Id") String catalog3Id);
+    List<PmsBaseAttrInfo> selectAttrInfoByCatalog3Id(@Param("catalog3Id") String catalog3Id);
 
     @Insert("insert into pms_base_attr_info (attr_name, catalog3_id) values(#{attrName}, #{catalog3Id})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
@@ -28,4 +28,7 @@ public interface AttrInfoMapper {
 
     @Delete("delete from pms_base_attr_value where attr_id=#{attrId}")
     void deleteByAttrId(@Param("attrId") String attrId);
+
+    @Select("select * from pms_base_sale_attr")
+    List<PmsBaseSaleAttr> selectAllBaseSaleAttr();
 }

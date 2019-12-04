@@ -2,6 +2,7 @@ package com.zben.gmall.service;
 
 import com.zben.gmall.bean.PmsBaseAttrInfo;
 import com.zben.gmall.bean.PmsBaseAttrValue;
+import com.zben.gmall.bean.PmsBaseSaleAttr;
 
 import java.util.List;
 
@@ -30,4 +31,10 @@ public interface AttrInfoService {
      * @return
      */
     List<PmsBaseAttrValue> getAttrValueList(String attrId);
+
+    /**
+     * 基础属性列表
+     * @return
+     */
+    List<PmsBaseSaleAttr> baseSaleAttrList();
 }
