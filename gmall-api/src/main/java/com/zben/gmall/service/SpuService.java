@@ -1,6 +1,6 @@
 package com.zben.gmall.service;
 
-import com.zben.gmall.bean.PmsProductInfo;
+import com.zben.gmall.bean.*;
 
 import java.util.List;
 
@@ -17,4 +17,26 @@ public interface SpuService {
      * @return
      */
     List<PmsProductInfo> spuList(String catalog3Id);
+
+    /**
+     * 保存spu
+     * @param pmsProductInfo
+     */
+    void saveSpuInfo(PmsProductInfo pmsProductInfo);
+
+    /**
+     * 根据商品id查询销售属性
+     * @param spuId
+     * @return
+     */
+    List<PmsProductSaleAttr> spuSaleAttrList(String spuId);
+
+    /**
+     * 根据商品id查询图片
+     * @param spuId
+     * @return
+     */
+    List<PmsProductImage> spuImageList(String spuId);
+
+    List<CalculatorChapter> chapterList(Long hisId, Integer articleId);
 }

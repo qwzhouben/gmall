@@ -7,10 +7,12 @@ import com.zben.gmall.bean.PmsBaseSaleAttr;
 import com.zben.gmall.manage.mapper.AttrInfoMapper;
 import com.zben.gmall.service.AttrInfoService;
 import org.apache.commons.lang3.StringUtils;
+import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @DESC: 属性服务实现
@@ -25,7 +27,15 @@ public class AttrInfoServiceImpl implements AttrInfoService {
 
     @Override
     public List<PmsBaseAttrInfo> attrInfoList(String catalog3Id) {
-        return attrInfoMapper.selectAttrInfoByCatalog3Id(catalog3Id);
+        List<PmsBaseAttrInfo> pmsBaseAttrInfos = attrInfoMapper.selectAttrInfoByCatalog3Id(catalog3Id);
+        List<PmsBaseAttrInfo> res = Lists.newArrayList();
+        pmsBaseAttrInfos.forEach(pmsBaseAttrInfo -> {
+            PmsBaseAttrInfo info = pmsBaseAttrInfo;
+            List<PmsBaseAttrValue> pmsBaseAttrValues = attrInfoMapper.selectBaseAttrById(pmsBaseAttrInfo.getId());
+            info.setAttrValueList(pmsBaseAttrValues);
+            res.add(info);
+        });
+        return res;
     }
 
     @Override

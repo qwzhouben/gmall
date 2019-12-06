@@ -31,4 +31,7 @@ public interface AttrInfoMapper {
 
     @Select("select * from pms_base_sale_attr")
     List<PmsBaseSaleAttr> selectAllBaseSaleAttr();
+
+    @Select("select * from pms_base_attr_value where attr_id=#{attrId}")
+    List<PmsBaseAttrValue> selectBaseAttrById(@Param("attrId") String attrId);
 }

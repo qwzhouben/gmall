@@ -1,12 +1,11 @@
 package com.zben.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.zben.gmall.bean.PmsBaseSaleAttr;
-import com.zben.gmall.bean.PmsProductInfo;
+import com.zben.gmall.bean.*;
 import com.zben.gmall.service.SpuService;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -34,19 +33,28 @@ public class SpuController {
      */
     @PostMapping("saveSpuInfo")
     public String saveSpuInfo(@RequestBody PmsProductInfo pmsProductInfo) {
-
+        spuService.saveSpuInfo(pmsProductInfo);
         return "success";
     }
 
     /**
-     * 上传图片
+     * 销售属性
      */
-    @PostMapping("fileUpload")
-    public String fileUpload(@RequestParam("file") MultipartFile multipartFile) {
-        //上传到服务器
+    @GetMapping("spuSaleAttrList")
+    public List<PmsProductSaleAttr> spuSaleAttrList(@RequestParam String spuId) {
+        return spuService.spuSaleAttrList(spuId);
+    }
 
-        //将图片存储路径返回给前端
-        String url = "https://img.alicdn.com/imgextra/i2/197232874/O1CN01cWbmXU1X6KnJF0BJ5_!!197232874.jpg";
-        return url;
+    /**
+     * 图片列表
+     */
+    @GetMapping("spuImageList")
+    public List<PmsProductImage> spuImageList(@RequestParam String spuId) {
+        return spuService.spuImageList(spuId);
+    }
+
+    @GetMapping("chapterList")
+    public List<CalculatorChapter> chapterList(Long hisId, Integer articleId) {
+        return spuService.chapterList(hisId, articleId);
     }
 }
