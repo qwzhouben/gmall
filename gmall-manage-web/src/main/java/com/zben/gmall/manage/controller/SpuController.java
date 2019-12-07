@@ -5,7 +5,6 @@ import com.zben.gmall.bean.*;
 import com.zben.gmall.service.SpuService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
