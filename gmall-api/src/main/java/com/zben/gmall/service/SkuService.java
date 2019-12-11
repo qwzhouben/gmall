@@ -13,4 +13,6 @@ public interface SkuService {
      * 保存sku
      */
     void saveSkuInfo(PmsSkuInfo pmsSkuInfo);
+
+    PmsSkuInfo getBySkuId(String skuId);
 }

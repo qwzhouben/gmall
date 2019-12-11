@@ -39,4 +39,18 @@ public interface SpuService {
     List<PmsProductImage> spuImageList(String spuId);
 
     List<CalculatorChapter> chapterList(Long hisId, Integer articleId);
+
+    /**
+     * 根据商品id列出销售属性值
+     * @param productId
+     * @return
+     */
+    List<PmsProductSaleAttr> spuSaleAttrListCheckBySku(String productId, String skuId);
+
+    /**
+     *
+     * @param productId
+     * @return
+     */
+    List<PmsSkuInfo> getSkuSaleAttrValueListBySpu(String productId);
 }

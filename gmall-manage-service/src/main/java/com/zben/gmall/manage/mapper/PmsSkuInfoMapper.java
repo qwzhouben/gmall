@@ -1,9 +1,7 @@
 package com.zben.gmall.manage.mapper;
 
 import com.zben.gmall.bean.PmsSkuInfo;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.*;
 
 /**
  * @DESC:
@@ -17,4 +15,7 @@ public interface PmsSkuInfoMapper {
             " values(#{productId}, #{price}, #{skuName}, #{skuDesc}, #{weight}, #{catalog3Id}, #{skuDefaultImg})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     void insertInfo(PmsSkuInfo pmsSkuInfo);
+
+    @Select("select * from pms_sku_info where id=#{skuId}")
+    PmsSkuInfo selectById(@Param("skuId") String skuId);
 }

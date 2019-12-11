@@ -1,14 +1,11 @@
 package com.zben.gmall.manage.mapper;
 
 import com.zben.gmall.bean.CalculatorChapter;
-import com.zben.gmall.bean.MarkChapter;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @DESC:

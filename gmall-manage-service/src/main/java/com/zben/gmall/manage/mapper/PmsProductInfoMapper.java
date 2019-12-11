@@ -1,6 +1,7 @@
 package com.zben.gmall.manage.mapper;
 
 import com.zben.gmall.bean.PmsProductInfo;
+import com.zben.gmall.bean.PmsSkuInfo;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -24,4 +25,6 @@ public interface PmsProductInfoMapper {
     @Insert("insert into pms_product_info(product_name, description, catalog3_id) values(#{productName}, #{description}, #{catalog3Id})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     void saveSpuInfo(PmsProductInfo pmsProductInfo);
+
+    List<PmsSkuInfo> selectSkuSaleAttrValueListBySpu(@Param("productId") String productId);
 }

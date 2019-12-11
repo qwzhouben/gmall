@@ -2,10 +2,7 @@ package com.zben.gmall.manage.mapper;
 
 import com.zben.gmall.bean.PmsProductSaleAttr;
 import com.zben.gmall.bean.PmsProductSaleAttrValue;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -28,4 +25,7 @@ public interface PmsProductSaleAttrMapper {
 
     @Select("select * from pms_product_sale_attr_value where product_id=#{productId} and sale_attr_id=#{saleAttrId}")
     List<PmsProductSaleAttrValue> selectValueBySpuIdAndAttrId(PmsProductSaleAttr pmsProductSaleAttr);
+
+    List<PmsProductSaleAttr> spuSaleAttrListCheckBySku(@Param("productId") String productId, @Param("skuId") String skuId);
+
 }
