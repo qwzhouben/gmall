@@ -72,6 +72,7 @@ public class RedisUtil {
                 return;
             }
             if (value.equals(jedis.get(KEY+key))) {
+                //redis支持lua， jedis.eval("lua") ，用lua脚本 获取到值就删掉， 防止高并发出现问题
                 jedis.del(KEY+key);
             }
         } catch (Exception e) {
