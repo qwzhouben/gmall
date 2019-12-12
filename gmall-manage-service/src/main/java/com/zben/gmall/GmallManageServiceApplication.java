@@ -1,4 +1,4 @@
-package com.zben.gmall.manage;
+package com.zben.gmall;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

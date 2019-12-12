@@ -20,6 +20,10 @@ spring:
     base-package: com.zben.gmall  #注解方式要扫描的包
     protocol:
       name: dubbo
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
 
 #mybatis
 #开启驼峰
